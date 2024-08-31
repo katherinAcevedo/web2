@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block titulo %}{{producto.id}}: {{producto.nombre}}{% endblock %}
+
+{% block contenido %}
+<table aling="center">
+    <tr>
+    <td>
+        <img src= "{{ url_for('static', filename='imagenes/producto1.png') }}" class="center"
+    </td>
+    <td>
+        <h2>{{ producto.categoria}} - {{producto.marca}}</h2>
+        <h1>{{ producto.nombre }} </h1>
+        <h2>{{ "{:,}".format(producto.precio) }}</h2>
+    </td>
+    </tr>
+    
+    <tr><td>
+        <a herf="{{ url_for('ruta_raiz') }}""><button>inicio</button></a>
+    </td>
+    </tr>
+</tabel>
+ 
+{% endblock %}
